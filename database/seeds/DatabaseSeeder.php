@@ -1,6 +1,8 @@
 <?php
 
+use App\Imports\DataImport;
 use Illuminate\Database\Seeder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
+        Excel::import(new DataImport, 'TestData.xlsx');
     }
 }
